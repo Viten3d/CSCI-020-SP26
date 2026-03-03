@@ -9,4 +9,11 @@ func main() {
 	fmt.Println("Enter an integer value:")
 	fmt.Scanln(&foo)
 	fmt.Println(foo, "is half of", foo*2)
+
+	{
+		var subScope int = 3
+		fmt.Println(subScope)
+	}
+
+	fmt.Println(subScope)
 }
