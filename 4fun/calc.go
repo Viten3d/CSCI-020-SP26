@@ -78,15 +78,34 @@ func PromptOperator() string {
 	return op
 }
 
+func TranslateOperator(op string) string {
+	if op == "+" {
+		return " plus "
+	} else if op == "-" {
+		return  " minus "
+	} else if op == "*" {
+		return " times "
+	} else { // expecting "/"
+		return " divided by "
+	}
+}
+
 func main() {
+	// create expression object
 	var currentExp Expression = NewExpression(0, 0, "+")
 
+	// welcome user
 	fmt.Print("Welcome to the calculator program!\n\n")
 
+	// get terms and operator from user
 	currentExp.SetFirstTerm(PromptFirstTerm())
+	fmt.Println()
 	currentExp.SetSecondTerm(PromptSecondTerm())
+	fmt.Println()
 	currentExp.SetOperator(PromptOperator())
+	fmt.Println()
 
-	fmt.Print(currentExp.GetFirstTerm(), currentExp.GetOperator(), currentExp.GetSecondTerm(), " = ")
-	fmt.Println(currentExp.EvaluateExpression())
+	// evaluate and output the result of the expression
+	fmt.Print(currentExp.GetFirstTerm(), TranslateOperator(currentExp.GetOperator()), currentExp.GetSecondTerm())
+	fmt.Println(" equals", currentExp.EvaluateExpression())
 }
