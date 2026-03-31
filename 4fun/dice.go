@@ -1,6 +1,8 @@
 /*
 Dice Roller
 30 Mar 2026
+
+Roll a chosen type of die any amount of times.
 */
 
 package main
@@ -57,8 +59,8 @@ func main() {
 
 	var userDice Dice = NewDice(userSides, 0, userQty)
 
-	fmt.Print(userDice.GetQty(), " D", userDice.GetSides())
-	fmt.Println(" roll(s):")
+	fmt.Print(userDice.GetQty(), " D")
+	fmt.Println(userDice.GetSides(), "roll(s):")
 
 	for i := 0; i < userDice.Qty; i += 1 {
 		userDice.Roll()
