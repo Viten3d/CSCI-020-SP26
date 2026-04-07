@@ -2,10 +2,11 @@
 HiLo
 Author: Jeff Hewitt
 Date Created: 09 Feb 2026
-Date Modified: 21 Feb 2026
-Description: A program that lets you guess whether a number will be greater or less than the previous.
+Date Modified: 5 Apr 2026
+Description:
+- A game where you guess whether the next number
+  will be greater or less than the previous.
 TBD:
-- add bet system
 - add continuous or preset round quantity
 - prevent incorrect inputs
 	- bet amount
