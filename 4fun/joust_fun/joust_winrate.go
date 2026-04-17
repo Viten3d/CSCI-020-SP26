@@ -196,7 +196,7 @@ func ShowOutcomeText(k1N string, k2N string, gs int) {
 	}
 }
 
-func ShowKnightData(k1 Knight, k2 Knight) {
+func ShowRoundData(k1 Knight, k2 Knight) {
 	k1.DisplayStats()
 	k2.DisplayStats()
 	fmt.Println()
@@ -235,8 +235,8 @@ func main() {
 	var Knight2StaminaCost int
 
 	// acquire and assign command line arguments
-	flag.BoolVar(&showRoundLogs, "ShowRoundLogs", false, "Display knight and weapon statistics from each round as the program runs.")
-	flag.BoolVar(&showMatchLogs, "ShowMatchLogs", false, "Display match winner as the program runs.")
+	flag.BoolVar(&showRoundLogs, "ShowRoundLogs", false, "Display knight and weapon statistics from each round as the program runs. (default false)")
+	flag.BoolVar(&showMatchLogs, "ShowMatchLogs", false, "Display match winner as the program runs. (default false)")
 	flag.IntVar(&matchCount, "Matches", matchCountDefault, "Amount of matches to be simulated.")
 
 	flag.StringVar(&Knight1Name, "Knight1Name", "King Arthur", "Name of first knight.")
@@ -278,7 +278,7 @@ func main() {
 
 			// display stats
 			if showRoundLogs == true {
-				ShowKnightData(Knight1, Knight2)
+				ShowRoundData(Knight1, Knight2)
 			}
 
 			// check if game-ending conditions are met
